@@ -13,6 +13,8 @@ public class CartPage {
 		
 		System.out.println("adding to cart");
 		
+		System.out.println("cart is done");
+		
 	}
 
 }
