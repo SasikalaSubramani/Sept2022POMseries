@@ -3,7 +3,7 @@ package com.qa.opencart.pages;
 public class CheckoutPage {
 	
 	public void checkout() {
-		System.out.println("Checkout----------Sasi");
+		System.out.println("Checkout----------Mukta");
 		int i = 0;
 	}
 
