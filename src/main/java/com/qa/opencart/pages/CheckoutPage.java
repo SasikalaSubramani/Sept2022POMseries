@@ -8,5 +8,9 @@ public class CheckoutPage {
 		String name ="macbook";
 		
 	}
+	
+	public void test() {
+		System.out.println("test method");
+	}
 
 }
