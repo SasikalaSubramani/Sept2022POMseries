@@ -413,7 +413,7 @@ public class ElementUtil {
 			System.out.println("element is not found.......tried for: " + timeOut + " sec "
 					+ " with the interval of 500 milli sec");
 
-			throw new FrameworkException("TimeOutException");
+//			throw new FrameworkException("TimeOutException");
 
 		}
 		return element;
@@ -439,7 +439,7 @@ public class ElementUtil {
 			System.out.println("element is not found.......tried for: " + timeOut + " sec " + " with the interval of "
 					+ intervalTime + " sec");
 
-			throw new FrameworkException("TimeOutException");
+//			throw new FrameworkException("TimeOutException");
 		}
 		return element;
 	}
