@@ -27,6 +27,8 @@ public class DriverFactory {
 	public WebDriver initDriver(Properties prop) {
 		
 		String browserName = prop.getProperty("browser").trim();
+		
+//		String browserName = System.getProperty("browser");// CMD LINE argument
 		System.out.println("Launching browser : " + browserName);
 		
 		highlight = prop.getProperty("highlight");
