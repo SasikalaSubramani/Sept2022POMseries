@@ -1,39 +1,13 @@
-pipeline {
+pipeline{
     
     
     agent any
     
-<<<<<<< HEAD
     stages{
-=======
-    tools{
-    	maven 'maven'
-        }
-
-    stages 
-    {
-        stage('Build') 
-        {
-            steps
-            {
-                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-            post 
-            {
-                success
-                {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
-        }
-                   
->>>>>>> 005d6f4254be305fcef9e7431d2b2629e245412e
         
         stage("build"){
             steps{
-                echo("build the project")
+                echo("build project")
             }
         }
         
@@ -48,9 +22,11 @@ pipeline {
                 echo("run unit tests")
             }
         }
-        stage("deploy to QA"){
+        
+        
+         stage("deploy to QA"){
             steps{
-                echo("deploy to QA")
+                echo("deploy to dev")
             }
         }
         
@@ -59,7 +35,9 @@ pipeline {
                 echo("run automation tests")
             }
         }
-        stage("deploy to stage"){
+        
+        
+         stage("deploy to STAGE"){
             steps{
                 echo("deploy to stage")
             }
@@ -67,11 +45,11 @@ pipeline {
         
         stage("RUN Sanity tests"){
             steps{
-                echo("run sanity tests")
+                echo("run automation tests")
             }
         }
         
-         stage("deploy to PROD"){
+        stage("deploy to PROD"){
             steps{
                 echo("deploy to prod")
             }
@@ -79,12 +57,8 @@ pipeline {
         
         
     }
-<<<<<<< HEAD
     
     
     
     
 }
-=======
-}
->>>>>>> 005d6f4254be305fcef9e7431d2b2629e245412e
