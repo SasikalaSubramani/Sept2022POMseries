@@ -3,7 +3,33 @@ pipeline {
     
     agent any
     
+<<<<<<< HEAD
     stages{
+=======
+    tools{
+    	maven 'maven'
+        }
+
+    stages 
+    {
+        stage('Build') 
+        {
+            steps
+            {
+                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+            post 
+            {
+                success
+                {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+                   
+>>>>>>> 005d6f4254be305fcef9e7431d2b2629e245412e
         
         stage("build"){
             steps{
@@ -53,8 +79,12 @@ pipeline {
         
         
     }
+<<<<<<< HEAD
     
     
     
     
 }
+=======
+}
+>>>>>>> 005d6f4254be305fcef9e7431d2b2629e245412e
