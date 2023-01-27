@@ -3,8 +3,7 @@ pipeline
     agent any
     
     tools{
-    		maven "MAVEN_HOME"
-            jdk "JAVA_HOME"
+    		maven 'maven'
         }
 
     stages 
@@ -80,7 +79,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/Sept2022POMSeries.git'
+                    git 'https://github.com/SasikalaSubramani/Sept2022POMseries'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
                     
                 }
