@@ -40,9 +40,9 @@ public class DriverFactory {
 
 		switch (browserName.toLowerCase()) {
 		case "chrome":
-//			driver = new ChromeDriver(optionsManager.getChromeOptions());
 
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+				System.out.println(" inside remote condition");
 				// remote execution on docker/grid/cloud
 
 				init_remoteDriver("chrome");
@@ -50,6 +50,7 @@ public class DriverFactory {
 
 			else {
 				// local execution
+				System.out.println("inside else part of remote condition");
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 
 			}
@@ -82,7 +83,7 @@ public class DriverFactory {
 
 			else {
 				// local execution
-				tlDriver.set(new EdgeDriver());
+				tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 
 			}
 

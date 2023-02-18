@@ -16,7 +16,7 @@ import com.qa.opencart.pages.RegPage;
 import com.qa.opencart.pages.ResultsPage;
 
 public class BaseTest {
-	
+
 	DriverFactory df;
 	WebDriver driver;
 	protected LoginPage loginPage;
@@ -24,28 +24,27 @@ public class BaseTest {
 	protected ResultsPage resultsPage;
 	protected ProductInfoPage prodInfoPage;
 	protected RegPage regPage;
-	
-	
+
 	protected SoftAssert softAssert;
-	
+
 	protected Properties prop;
-	
-	@Parameters({"browser"})
+
+	@Parameters({ "browser" })
 	@BeforeTest
 	public void setup(String browserName) {
 		df = new DriverFactory();
 		prop = df.initProp();
-		
-		if (browserName!=null) {
+
+		if (browserName != null) {
 			prop.setProperty("browser", browserName);
 		}
-		
+
 		driver = df.initDriver(prop);
 		loginPage = new LoginPage(driver);
 		softAssert = new SoftAssert();
-		
+
 	}
-	
+
 	@AfterTest
 	public void tearDown() {
 		driver.quit();
