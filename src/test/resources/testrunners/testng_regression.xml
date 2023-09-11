@@ -10,21 +10,24 @@
 	</listeners>
 	<test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="115.0" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest"></class>
 		</classes>
 	</test>
 		<test name="Accounts Page Test">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
-	<!-- <test name="Product Info Page Test">
+	 <test name="Product Info Page Test">
 		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
 		<classes>
 			<class name="com.qa.opencart.tests.ProductInfoPageTest" />
 		</classes>
-	</test> -->
+	</test> 
 
 </suite>
