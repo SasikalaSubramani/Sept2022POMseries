@@ -15,14 +15,14 @@ public class ExcelUtil {
 	public static Workbook book;
 	public static Sheet sheet;
 
-	public static Object[][] getTestData(String SheetName) {
+	public static Object[][] getTestData(String sheetName) {
 		Object data[][] = null;
 
 		try {
 			FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
 
 			book = WorkbookFactory.create(ip);
-			sheet = book.getSheet(SheetName);
+			sheet = book.getSheet(sheetName);
 
 			data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 
